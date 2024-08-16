@@ -51,8 +51,8 @@ export interface Invoice {
 
   notesLabel: string
   notes: string
-  termLabel: string
-  term: string
+  BankLabel: string
+  BankDetails: string
 }
 
 export interface CSSClasses {

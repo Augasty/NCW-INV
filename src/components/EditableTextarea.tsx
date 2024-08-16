@@ -10,6 +10,7 @@ interface Props {
   onChange?: (value: string) => void
   pdfMode?: boolean
   rows?: number
+  resizable?: boolean
 }
 
 const EditableTextarea: FC<Props> = ({
@@ -19,6 +20,7 @@ const EditableTextarea: FC<Props> = ({
   onChange,
   pdfMode,
   rows,
+  resizable = true
 }) => {
   return (
     <>
@@ -31,6 +33,7 @@ const EditableTextarea: FC<Props> = ({
           placeholder={placeholder || ''}
           value={value || ''}
           onChange={onChange ? (e) => onChange(e.target.value) : undefined}
+          style={{ resize: resizable ? 'both' : 'none' }} 
         />
       )}
     </>

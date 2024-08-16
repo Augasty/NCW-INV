@@ -2,6 +2,8 @@ import EditableInput from "../EditableInput";
 
 import Text from "../Text";
 import View from "../View";
+
+import numberToWords from 'number-to-words';
 const PriceComponent = ({
   invoice,
   handleChange,
@@ -12,8 +14,21 @@ const PriceComponent = ({
   pdfMode,
   handleTaxTypeChange,
 }) => {
+
+
+
+  const totalInWords = numberToWords.toWords(typeof subTotal !== "undefined" &&
+    typeof saleTax !== "undefined"
+      ? subTotal + saleTax
+      : 0
+    );
+
+    const totalInWordsSplitted = totalInWords.split(" ");
+
+    const totalInWordsUppercase =  totalInWordsSplitted.map((word) => { 
+    return word[0].toUpperCase() + word.substring(1)}).join(" ");
   return (
-    <View className="flex" pdfMode={pdfMode}>
+    <>    <View className="flex" pdfMode={pdfMode}>
       <View className="w-50 mt-10" pdfMode={pdfMode}>
         {/* this is to put the part below on the right side */}
       </View>
@@ -134,6 +149,15 @@ const PriceComponent = ({
         </View>
       </View>
     </View>
+
+
+    <View className="w-100 mt-10" pdfMode={pdfMode}>
+      <Text className="left bold dark" pdfMode={pdfMode}>
+              Total: {totalInWordsUppercase} Rupees.
+            </Text>
+    </View>
+
+    </>
   );
 };
 

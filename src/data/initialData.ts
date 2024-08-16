@@ -66,6 +66,8 @@ export const initialInvoice: Invoice = {
   currency: '₹',
   notesLabel: 'Notes',
   notes: 'It was great doing business with you.',
-  termLabel: 'Terms & Conditions',
-  term: 'Please make the payment by the due date.',
+  BankLabel: 'Bank Details:',
+  BankDetails :`Bank Name: STATE BANK OF INDIA.
+A/c No: 36157880784         Branch: BIRATI
+IFS Code: SBIN0004604.`
 }
