@@ -43,7 +43,7 @@ export interface Invoice {
   productLines: ProductLine[]
 
   subTotalLabel: string
-  taxLabel: string
+  transporter: string
   taxTypes: taxTypes[]
 
   totalLabel: string

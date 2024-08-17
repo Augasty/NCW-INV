@@ -72,6 +72,9 @@ const styles: CSSClasses = {
   'w-18': {
     width: '18%',
   },
+  'w-22': {
+    width: '18%',
+  },
 
   row: {
     borderBottom: `1px solid ${colorGray}`,
@@ -104,7 +107,9 @@ const styles: CSSClasses = {
   'p-5': {
     padding: '5px',
   },
-
+  'p-5-0': {
+    padding: '5px 5px 0px 0px',
+  },
   'pb-10': {
     paddingBottom: '10px',
   },

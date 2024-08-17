@@ -16,7 +16,7 @@ const ProductDescriptions = ({
   return (
     <>
       {/* Product description starts here */}
-      <View className="mt-30 bg-dark flex" pdfMode={pdfMode}>
+      <View className="mt-10 bg-dark flex" pdfMode={pdfMode}>
         <View className="w-60 p-5" pdfMode={pdfMode}>
           <EditableInput
             className="white bold"
@@ -42,11 +42,12 @@ const ProductDescriptions = ({
           />
         </View>
         <View className="w-18 p-5" pdfMode={pdfMode}>
-          <EditableInput
+          <EditableTextarea
             className="white bold right"
             value={invoice.productLineQuantityRate}
             onChange={(value) => handleChange('productLineQuantityRate', value)}
             pdfMode={pdfMode}
+            resizable="vertical"
           />
         </View>
         <View className="w-18 p-5" pdfMode={pdfMode}>

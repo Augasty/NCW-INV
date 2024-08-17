@@ -215,17 +215,18 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
               onChange={(value) => handleChange('name', value)}
               pdfMode={pdfMode}
             />
-            <EditableInput
+            <EditableTextarea
               placeholder="Company's Address"
               value={invoice.companyAddress}
               onChange={(value) => handleChange('companyAddress', value)}
               pdfMode={pdfMode}
             />
-            <EditableInput
-              placeholder="City, State Zip"
+            <EditableTextarea
+              placeholder="Additional Data"
               value={invoice.companyAddress2}
               onChange={(value) => handleChange('companyAddress2', value)}
               pdfMode={pdfMode}
+              resizable={false}
             />
             <EditableInput
               value={invoice.companyCountry}
@@ -235,7 +236,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
           </View>
           <View className="w-50" pdfMode={pdfMode}>
             <EditableInput
-              className="fs-45 right bold"
+              className="fs-20 right bold"
               placeholder="Invoice"
               value={invoice.title}
               onChange={(value) => handleChange('title', value)}
@@ -244,7 +245,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
           </View>
         </View>
 
-        <View className="flex mt-40" pdfMode={pdfMode}>
+        <View className="flex mt-20" pdfMode={pdfMode}>
           <View className="w-55" pdfMode={pdfMode}>
             <EditableInput
               className="bold dark mb-5"
@@ -288,7 +289,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
               </View>
               <View className="w-60" pdfMode={pdfMode}>
                 <EditableInput
-                  placeholder="INV-12"
+                  placeholder="INV-NUMBER"
                   value={invoice.invoiceTitle}
                   onChange={(value) => handleChange('invoiceTitle', value)}
                   pdfMode={pdfMode}
@@ -400,7 +401,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
             value={invoice.BankDetails}
             // onChange={(value) => handleChange('BankDetails', value)}
             pdfMode={pdfMode}
-            resizable={false}
+            resizable="none"
           />
         </View>
       </Page>
